@@ -13,3 +13,7 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+console.log(process.env)
+console.log(salody)
+console.log(VERSION)
