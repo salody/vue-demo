@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Home from '@/views/home/Home'
 import Login from '@/views/login/Login'
 import Battles from '@/views/battles/Battles'
 import PublicBattles from '@/views/battles/PublicBattles'
@@ -12,7 +12,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
-    { path: '/', name: 'HelloWorld', component: HelloWorld },
+    { path: '/', name: 'HelloWorld', component: Home },
     { path: '/login', name: 'Login', component: Login },
     { path: '/callback', component: Callback },
     {
