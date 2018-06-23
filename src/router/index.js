@@ -1,29 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/views/home/Home'
-import Login from '@/views/login/Login'
-import Battles from '@/views/battles/Battles'
-import PublicBattles from '@/views/battles/PublicBattles'
-import PrivateBattles from '@/views/battles/PrivateBattles'
-import Callback from '@/components/Callback'
+// import devRouter from './dev'
+import prodRouter from './prod'
 
-Vue.use(Router)
+// webpack在编译打包过程中只会进行词法分析，而不会去执行app中的文件
+// 所以在这里不可能实现基于node_env来判断进行如何进行路由加载从而打包
+// const router = process.env.NODE_ENV === 'production' ? prodRouter : devRouter
 
-export default new Router({
-  mode: 'history',
-  routes: [
-    { path: '/', name: 'HelloWorld', component: Home },
-    { path: '/login', name: 'Login', component: Login },
-    { path: '/callback', component: Callback },
-    {
-      path: '/battles',
-      name: 'Battles',
-      component: Battles,
-      children: [
-        {path: 'private', component: PrivateBattles},
-        {path: 'public', component: PublicBattles},
-        {path: '/', component: PublicBattles}
-      ]
-    }
-  ]
-})
+export default prodRouter
